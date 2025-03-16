@@ -16,6 +16,7 @@ class CheckAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
+        //this will check if the user is not authorized then it will be redirect to login page
         if(!Auth::check()){
             return redirect('/login');
         }
